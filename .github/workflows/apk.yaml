@@ -3,7 +3,7 @@ name: Build & Release Flet APK
 on:
   push:
     tags:
-      - "[0-9]+.[0-9]+.[0-9]+"  # 仅当 push 0.x.x 格式的 tag 时触发
+      - "*"  # 仅当 push 0.x.x 格式的 tag 时触发
 
 jobs:
   build:
