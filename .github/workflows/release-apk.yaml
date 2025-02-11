@@ -18,7 +18,7 @@ jobs:
 
       - name: 🔧 Build APK
         run: |
-          cd jiyi && ./build.sh
+          cd jiyi && sh build.sh
 
       - name: 🚀 Upload APK to Release
         uses: softprops/action-gh-release@v2
