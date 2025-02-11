@@ -5,7 +5,7 @@ def restructure_achievements(input_filepath="achievement.json", output_filepath=
         with open(input_filepath, 'r', encoding='utf-8') as f:
             achievements_list = json.load(f)
     except FileNotFoundError:
-        print(f"错误: 文件 {input_filepath} 未找到.")
+        print(f"错误:: 文件 {input_filepath} 未找到.")
         return
     except json.JSONDecodeError:
         print(f"错误: 文件 {input_filepath} JSON 格式解码失败，请检查文件内容.")
