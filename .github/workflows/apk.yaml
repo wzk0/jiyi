@@ -2,8 +2,8 @@ name: Build & Release Flet APK
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "*"  # 仅当 push 0.x.x 格式的 tag 时触发
 
 jobs:
   build:
@@ -18,10 +18,7 @@ jobs:
 
       - name: 🔧 Build APK
         run: |
-          export VERSION=$(echo $GITHUB_REF | sed 's/refs\/tags\///')
-          cd jiyi
-          ./build.sh
-          mv build/apk/*.apk jiyi-$VERSION.apk
+          cd jiyi && ./build.sh
 
       - name: 🚀 Upload APK to Release
         uses: softprops/action-gh-release@v2
