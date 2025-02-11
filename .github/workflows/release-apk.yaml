@@ -21,6 +21,13 @@ jobs:
           pip3 install flet[all] --break-system-packages
           cd jiyi && sh build.sh
 
+      - name: 🏷 Create tag
+        id: create_tag
+        run: |
+          echo "$VERSION" >> $GITHUB_ENV
+          git tag "$VERSION"
+          git push origin "$VERSION"
+
       - name: 🚀 Upload APK to Release
         uses: softprops/action-gh-release@v2
         with:
