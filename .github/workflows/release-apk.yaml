@@ -2,8 +2,8 @@ name: Build & Release Flet APK
 
 on:
   push:
-    tags:
-      - "*"  # 仅当 push 0.x.x 格式的 tag 时触发
+    branches:
+      - main # 仅当 push 0.x.x 格式的 tag 时触发
 
 jobs:
   build:
