@@ -1,0 +1,30 @@
+name: Build & Release Flet APK
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"  # 仅当 push 0.x.x 格式的 tag 时触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔨 Make build script executable
+        run: chmod +x jiyi/build.sh
+
+      - name: 🔧 Build APK
+        run: |
+          export VERSION=$(echo $GITHUB_REF | sed 's/refs\/tags\///')
+          cd jiyi
+          ./build.sh
+          mv build/apk/*.apk jiyi-$VERSION.apk
+
+      - name: 🚀 Upload APK to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/apk/*.apk
+          token: ${{ secrets.GITHUB_TOKEN }}
