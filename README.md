@@ -58,7 +58,7 @@ pip3 install flet[all] --break-system-packages # 安装flet.
 flet build # 构建, 可以选择平台参数, 详见flet官网.
 ```
 
-记易的程序存放在`main.py`与`tool/tool.py`中, 目前还没什么注释, 但遵从响应式UI的设计理念: 即用户操作改变UI.
+记易的程序存放在`jiyi/main.py`与`jiyi/tool/tool.py`中, 目前还没什么注释, 但遵从响应式UI的设计理念: 即用户操作改变UI.
 
 由于我只有Linux和安卓设备, 其他平台并没有做测试, 且UI设计主要以安卓为主, 一些UI可能会不合适.
 
