@@ -1,0 +1,97 @@
+[
+    {
+        "name": "amber",
+        "zh": "珀尘光",
+        "description": "琥珀碎屑浮于光尘，隐于暮色微茫"
+    },
+    {
+        "name": "blue",
+        "zh": "沧溟烟",
+        "description": "深海苍茫与天际雾霭的混沌交融"
+    },
+    {
+        "name": "bluegrey",
+        "zh": "青霭胧",
+        "description": "山岚未散时，冷铁覆苔的幽邃"
+    },
+    {
+        "name": "brown",
+        "zh": "檀尘染",
+        "description": "古寺香灰沉淀于褪色经卷的暗调"
+    },
+    {
+        "name": "cyan",
+        "zh": "空青霭",
+        "description": "雨霁时瓷釉沁出的虚渺釉色"
+    },
+    {
+        "name": "deeporange",
+        "zh": "赤枫烬",
+        "description": "焚尽残阳的余烬浸入焦木纹理"
+    },
+    {
+        "name": "deeppurple",
+        "zh": "绛夜冥",
+        "description": "未央时烛泪凝结的暗哑血痂"
+    },
+    {
+        "name": "green",
+        "zh": "松烟凝",
+        "description": "墨锭研开刹那冻结的苍翠残影"
+    },
+    {
+        "name": "grey",
+        "zh": "玄霜寂",
+        "description": "铁器锈蚀前最后一抹冷寂的哑光"
+    },
+    {
+        "name": "indigo",
+        "zh": "靛海冥",
+        "description": "沉船桅帆在深海中褪为鬼魅的幽蓝"
+    },
+    {
+        "name": "lightblue",
+        "zh": "晴穹缈",
+        "description": "褪色风筝线末端消散的虚空"
+    },
+    {
+        "name": "lightgreen",
+        "zh": "荇风漪",
+        "description": "浮萍碎影扰动古池的腐殖微光"
+    },
+    {
+        "name": "lime",
+        "zh": "金缕尘",
+        "description": "铜兽衔环剥落时露出的氧化层"
+    },
+    {
+        "name": "orange",
+        "zh": "赭霞烬",
+        "description": "陶窑冷却后釉面龟裂的残晖"
+    },
+    {
+        "name": "pink",
+        "zh": "绯云缈",
+        "description": "褪色胭脂晕染在生宣纸上的余韵"
+    },
+    {
+        "name": "purple",
+        "zh": "紫棠黯",
+        "description": "淤伤结痂前最后一层诡谲的暗翳"
+    },
+    {
+        "name": "red",
+        "zh": "朱砂痕",
+        "description": "符纸焚毁后渗入龟甲的诅咒残迹"
+    },
+    {
+        "name": "teal",
+        "zh": "水凇影",
+        "description": "冰层下藻荇腐烂时的青黑浊色"
+    },
+    {
+        "name": "yellow",
+        "zh": "缃绮旧",
+        "description": "虫蠹蚕食后帛书泛黄的朽败肌理"
+    }
+]

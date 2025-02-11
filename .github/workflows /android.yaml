@@ -1,0 +1,40 @@
+name: Android Release on Build Tag  # 工作流程的名称
+
+on:
+  push:
+    tags:
+      - build  # 触发工作流程的 tag 名称，当推送名为 'build' 的 tag 时触发
+
+jobs:
+  release: # 定义一个名为 release 的作业
+    runs-on: ubuntu-latest  #  运行在 GitHub 托管的 Ubuntu 最新版 runner 上
+
+    steps:
+      - name: Checkout code  # 步骤名称：检出代码
+        uses: actions/checkout@v3  # 使用 actions/checkout@v3 Action 检
+
+      - name: Execute build script # 步骤名称：执行构建脚本
+        run: chmod +x build.sh && ./build.sh #  先给 build.sh 添加执行权限，然后执行构建脚本
+
+      - name: Create Release # 步骤名称：创建 Release
+        uses: actions/create-release@v1 # 使用 actions/create-release@v1 Action 创建 Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} #  使用 secrets.GITHUB_TOKEN 进行身份验证
+        with:
+          tag_name: 0.4.1 # Release 的标签名，设定为 0.4.1
+          release_name: Release v0.4.1 # Release 的名称，可以自定义，这里设置为 Release v0.4.1
+          body: |
+            测试workflow
+
+          draft: false #  设置为 false 表示创建正式 Release，true 表示创建草稿 Release
+          prerelease: false # 设置为 false 表示不是预发布版本
+
+      - name: Upload APK as Release Asset # 步骤名称：上传 APK 文件作为 Release 资产
+        uses: actions/upload-release-asset@v1 # 使用 actions/upload-release-asset@v1 Action 上传资产
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} #  同样需要身份验证
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} #  从上一步创建 Release 的步骤中获取上传 URL
+          asset_path: build/apk/*.apk # APK 文件路径，根据您 build.sh 的实际输出路径进行调整，这里假设 APK 文件在 build/apk/ 目录下
+          asset_name: app-release-0.4.1.apk #  Release 资产的名称，可以自定义，这里设置为 app-release-0.4.1.apk
+          asset_content_type: application/vnd.android.package-archive #  MIME 类型，APK 文件通常是 application/vnd.android.package-archive

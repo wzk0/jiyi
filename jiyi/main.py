@@ -3,7 +3,7 @@ import datetime
 from tool import tool
 
 JIYI_VERSION = '0.4.1'
-HELP_URL = 'https://github.com/wzk0/jiyi'
+HELP_URL = 'https://github.com/wzk0/jiyi/blob/main/HELP.md#45-%E5%AF%BC%E5%85%A5%E8%B4%A6%E5%8D%95'
 
 def convert_to_float(value):
     try:
