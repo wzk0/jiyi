@@ -18,6 +18,7 @@ jobs:
 
       - name: 🔧 Build APK
         run: |
+          pip3 install flet[all] --break-system-packages
           cd jiyi && sh build.sh
 
       - name: 🚀 Upload APK to Release
